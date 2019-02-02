@@ -1,0 +1,18 @@
+<div id="app">
+	<p v-html="msg"></p>
+  <p>{{ msg }}</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+  var app = new Vue({
+  	el: "#app",
+  	data: {
+  		msg: "<span style='color: red'>RED</span>"
+  	}
+  })
+
+</script>
