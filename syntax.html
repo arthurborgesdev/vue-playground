@@ -1,6 +1,10 @@
 <div id="app">
 	<p v-html="msg"></p>
   <p>{{ msg }}</p>
+  <h3>{{msg + 1 }}</h3>
+  <h2> {{ msg ? 'YES' : 'NO'}} </h2>
+  <h3> {{ message.split('').reverse().join('') }} </h3>
+  <div v-bind:id="'list-' + id"></div>
 </div>
 
 
@@ -11,7 +15,9 @@
   var app = new Vue({
   	el: "#app",
   	data: {
-  		msg: "<span style='color: red'>RED</span>"
+  		msg: "<span style='color: red'>RED</span>",
+  		message: 'HEY YOU',
+  		id: 'myID'
   	}
   })
 

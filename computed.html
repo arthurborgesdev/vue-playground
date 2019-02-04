@@ -1,0 +1,33 @@
+<div id="example">
+	<p>Original: {{ message }}</p>
+  <p>Reversed: {{ reversedMessage }}</p>
+  <p>The method Date is: {{ nowMethod() }} </p>
+  <p>The computed Date is: {{ nowComputed }} </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  var app = new Vue({
+  	el: "#example",
+  	data: {
+  		message: 'HEY YOU'
+  	},
+  	computed: {
+  		reversedMessage: function () {
+  			return this.message.split('').reverse().join('')
+  		},
+  		// is cached 
+  		nowComputed: function() {
+  			return Date.now().toLocaleString()
+  		}
+  	},
+  	methods: {
+  		// is not cached
+  		nowMethod: function() {
+  			return Date.now().toLocaleString()
+  		}
+  	}
+  })
+
+</script>
